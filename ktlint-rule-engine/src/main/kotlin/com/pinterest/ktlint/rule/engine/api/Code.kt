@@ -115,6 +115,6 @@ public class Code private constructor(
          * filesystem are ignored as the snippet is not associated with a file path. Use [Code.fromFile] for scanning a file while at the
          * same time respecting the '.editorconfig' files on the path to the file.
          */
-        public fun fromStdin(): Code = fromSnippet(String(System.`in`.readBytes()))
+        public fun fromStdin(stdinPath: Path?): Code = fromSnippetWithPath(String(System.`in`.readBytes()), virtualPath = stdinPath)
     }
 }
